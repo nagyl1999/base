@@ -11,6 +11,7 @@ public class TrainControllerImpl implements TrainController {
 	@Override
 	public void emergencyBreak() {
 		setSpeedLimit(0);
+		thisFunctionDoesNotExiststThereforeItWontBuild();
 	}
 
 	@Override
