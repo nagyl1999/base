@@ -3,8 +3,10 @@
 * egy
 
 ```
-modositas
+modositas, ez a sor merge conflictot okoz
 ```
+
+
 
 # Train Speed Controller
 
