@@ -3,7 +3,7 @@
 * egy
 
 ```
-modositas
+modositas, azthiszem ez a sor volt az
 ```
 
 # Train Speed Controller
