@@ -2,25 +2,21 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>hu.bme.mit.train</groupId>
-	<artifactId>hu.bme.mit.train</artifactId>
+	<artifactId>hu.bme.mit.train.logger</artifactId>
 	<version>0.5.0-SNAPSHOT</version>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <parent>
+        <artifactId>hu.bme.mit.train</artifactId>
+        <groupId>hu.bme.mit.train</groupId>
+        <version>0.5.0-SNAPSHOT</version>
+    </parent>
 
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>train-interfaces</module>
-        <module>train-controller</module>
-        <module>train-sensor</module>
-        <module>train-system</module>
-        <module>train-user</module>
-		<module>train-logger</module>
-    </modules>
-
-	<dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>hu.bme.mit.train</groupId>
+            <artifactId>hu.bme.mit.train.interfaces</artifactId>
+            <version>0.5.0-SNAPSHOT</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
@@ -40,23 +36,5 @@
 			<version>0.8.7</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-  			<groupId>com.google.guava</groupId>
-  			<artifactId>guava</artifactId>
-  			<version>31.0.1-jre</version>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.10.1</version>
-				<configuration>
-					<release>11</release>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    </dependencies>
 </project>
