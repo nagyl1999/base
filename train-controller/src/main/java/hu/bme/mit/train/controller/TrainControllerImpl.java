@@ -11,7 +11,8 @@ public class TrainControllerImpl implements TrainController {
 	@Override
 	public void emergencyBreak() {
 		setSpeedLimit(0);
-		thisFunctionDoesNotExiststThereforeItWontBuild();
+		/* this function does not exist, therefore it should remain commented */
+		// thisFunctionDoesNotExiststThereforeItWontBuild();
 	}
 
 	@Override
