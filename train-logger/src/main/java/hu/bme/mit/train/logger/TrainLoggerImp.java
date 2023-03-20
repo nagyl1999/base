@@ -19,6 +19,10 @@ public class TrainLoggerImp {
         this.controller = controller;
     }
 
+    public boolean isEmpty() {
+        return data.isEmpty();
+    }
+
     public void log() {
         data.put(
             new Date(),

@@ -20,5 +20,6 @@ public class TrainLoggerTest {
     @Test
     public void ThisIsAnExampleTestStub() {
         logger.log();
+        Assert.assertEquals(false, logger.isEmpty());
     }
 }
