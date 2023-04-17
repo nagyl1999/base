@@ -11,17 +11,17 @@ public class TrainControllerImpl implements TrainController {
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
-	private static TrainControllerImpl self;
+	private static TrainControllerImpl trainControllerObject;
 
 	public TrainControllerImpl() {
-		self = this;
+		trainControllerObject = this;
 		ScheduledExecutorService executorService;
     	executorService = Executors.newSingleThreadScheduledExecutor();
     	executorService.scheduleAtFixedRate(TrainControllerImpl::updateReferenceSpeed, 0, 1, TimeUnit.SECONDS);
 	}
 
 	public static void updateReferenceSpeed() {
-		self.followSpeed();
+		trainControllerObject.followSpeed();
 	}
 
 	@Override
