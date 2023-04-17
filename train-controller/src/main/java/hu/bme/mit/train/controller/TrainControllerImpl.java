@@ -2,11 +2,27 @@ package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class TrainControllerImpl implements TrainController {
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
+	private static TrainControllerImpl self;
+
+	public TrainControllerImpl() {
+		self = this;
+		ScheduledExecutorService executorService;
+    	executorService = Executors.newSingleThreadScheduledExecutor();
+    	executorService.scheduleAtFixedRate(TrainControllerImpl::updateReferenceSpeed, 0, 1, TimeUnit.SECONDS);
+	}
+
+	public static void updateReferenceSpeed() {
+		self.followSpeed();
+	}
 
 	@Override
 	public void emergencyBreak() {
@@ -26,7 +42,6 @@ public class TrainControllerImpl implements TrainController {
 		        referenceSpeed = 0;
             }
 		}
-
 		enforceSpeedLimit();
 	}
 
